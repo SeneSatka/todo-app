@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "title": "TODO LIST"
+  },
+  "settings": {
+    "title": "Settings",
+    "darkTheme": "Dark Theme",
+    "language": { "title": "Language", "tr": "Turkish", "en": "English" },
+    "footer": "Author: SeneSatka"
+  }
+}

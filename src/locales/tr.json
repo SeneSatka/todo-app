@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "title": "YAPILACAKLAR LİSTESİ"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "darkTheme": "Koyu Tema",
+    "language": { "title": "Dil", "tr": "Türkçe", "en": "İngilizce" },
+    "footer": "Yazar: SeneSatka"
+  }
+}
