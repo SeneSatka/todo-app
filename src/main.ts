@@ -1,8 +1,9 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import router from "./utils/router";
+
 import languageSystem from "./utils/languageSystem";
+import { t } from "i18next";
 
 const app = createApp(App);
 const theme = localStorage.getItem("theme");
@@ -14,7 +15,8 @@ if (theme == "dark") {
   localStorage.setItem("theme", "light");
 }
 app.use(languageSystem);
-app.use(router);
+
+document.title = t("title");
 
 app.mount("#app").$nextTick(() => {
   window.ipcRenderer.on("main-process-message", (_event, message) => {

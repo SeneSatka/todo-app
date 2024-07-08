@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import i18next from "i18next";
+import { useTranslation } from "i18next-vue";
 import { ref } from "vue";
 
 const themeIsDark = ref(localStorage.getItem("theme") == "dark");
@@ -15,15 +16,19 @@ const theme = () => {
   }
   themeIsDark.value = localStorage.getItem("theme") == "dark";
 };
+const { t } = useTranslation();
 const language = () => {
   const select = document.getElementById("language") as HTMLInputElement;
   localStorage.setItem("lng", select.value);
   lng.value = localStorage.getItem("lng") ?? "en";
+
   i18next.changeLanguage(lng.value);
+
+  console.log(t("title"));
+  document.title = t("title");
 };
 const github = () => {
   window.utils.openBrowser("https://github.com/SeneSatka");
-  console.log("sa");
 };
 </script>
 <template>
@@ -33,7 +38,7 @@ const github = () => {
     >
       <div
         id="settings-modal"
-        class="w-full h-full gap-3 bg-gray-200 dark:bg-bgDark border-gray-300 dark:border-borderDark border p-4 rounded-xl flex flex-col shadow-2xl"
+        class="w-96 h-60 gap-3 bg-gray-200 dark:bg-bgDark border-gray-300 dark:border-borderDark border p-4 rounded-xl flex flex-col shadow-2xl"
       >
         <div class="w-full flex">
           <span class="text-xl font-bold text-gray-900 dark:text-white">{{
@@ -88,9 +93,11 @@ const github = () => {
         </div>
         <div class="m-auto" />
         <div id="footer">
-          <span @click="github" class="underline cursor-pointer">{{
-            $t("settings.footer")
-          }}</span>
+          <span
+            @click="github"
+            class="underline cursor-pointer text-gray-900 dark:text-white"
+            >{{ $t("settings.footer") }}</span
+          >
         </div>
       </div>
     </div>

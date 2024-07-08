@@ -1,4 +1,5 @@
 {
+  "title": "Todo App",
   "nav": {
     "title": "TODO LIST"
   },
@@ -7,5 +8,38 @@
     "darkTheme": "Dark Theme",
     "language": { "title": "Language", "tr": "Turkish", "en": "English" },
     "footer": "Author: SeneSatka"
+  },
+  "addTask": "Create Task",
+  "taskCreateModal": {
+    "title": "Create Task",
+    "taskTitle": "Title",
+    "status": {
+      "title": "Status",
+      "incomplete": "Incomplete",
+      "completed": "Completed"
+    },
+    "create": "Create!"
+  },
+
+  "taskEditModal": {
+    "title": "Edit Task",
+    "taskTitle": "Title",
+    "status": {
+      "title": "Status",
+      "incomplete": "Incomplete",
+      "completed": "Completed"
+    },
+    "save": "Save!"
+  },
+
+  "taskDeleteModal": {
+    "title": "Delete Task",
+    "taskTitle": "Title",
+    "status": {
+      "title": "Status",
+      "incomplete": "Incomplete",
+      "completed": "Completed"
+    },
+    "delete": "Delete!"
   }
 }

@@ -24,5 +24,17 @@ declare namespace NodeJS {
 // Used in Renderer process, expose in `preload.ts`
 interface Window {
   ipcRenderer: import("electron").IpcRenderer;
-  utils: { openBrowser(url: string) };
+  utils: {
+    openBrowser(url: string): void;
+    db: {
+      set: (key: string, value: any) => void;
+      delete: (key: string) => void;
+      deleteAll: () => void;
+      get: (key: string) => any;
+      getAll: () => {
+        id: string;
+        data: unknown;
+      }[];
+    };
+  };
 }

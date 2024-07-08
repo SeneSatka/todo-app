@@ -1,5 +1,5 @@
-import { ipcRenderer, contextBridge } from "electron";
-import { shell } from "electron/common";
+import { DB } from "@enkas/db";
+import { ipcRenderer, contextBridge, shell } from "electron";
 contextBridge.exposeInMainWorld("ipcRenderer", {
   on(...args: Parameters<typeof ipcRenderer.on>) {
     const [channel, listener] = args;
@@ -20,8 +20,16 @@ contextBridge.exposeInMainWorld("ipcRenderer", {
     return ipcRenderer.invoke(channel, ...omit);
   },
 });
+const db = new DB({ file: "todos.json", path: "org.senesatka.todoapp" });
 contextBridge.exposeInMainWorld("utils", {
   openBrowser(url: string) {
     shell.openExternal(url);
+  },
+  db: {
+    set: (key: string, value: any) => db.set(key, value),
+    delete: (key: string) => db.delete(key),
+    deleteAll: () => db.deleteAll(),
+    get: (key: string) => db.get(key),
+    getAll: () => db.all(),
   },
 });

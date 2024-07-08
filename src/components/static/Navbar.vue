@@ -36,7 +36,7 @@ window.addEventListener("click", (e) => {
 </script>
 <template>
   <div
-    class="h-14 bg-gray-200 dark:bg-bgDark flex items-center p-4 mb-3 rounded-xl border-gray-300 dark:border-borderDark border"
+    class="h-14 bg-gray-200 dark:bg-bgDark flex items-center p-4 border-b-gray-300 dark:border-b-borderDark border-b"
   >
     <span class="text-3xl font-bold text-gray-900 dark:text-white">{{
       $t("nav.title")

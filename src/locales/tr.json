@@ -1,11 +1,43 @@
 {
+  "title": "Todo uygulaması",
   "nav": {
-    "title": "YAPILACAKLAR LİSTESİ"
+    "title": "TODO LİSTESİ"
   },
   "settings": {
     "title": "Ayarlar",
     "darkTheme": "Koyu Tema",
     "language": { "title": "Dil", "tr": "Türkçe", "en": "İngilizce" },
     "footer": "Yazar: SeneSatka"
+  },
+  "addTask": "Görev Oluştur",
+  "taskCreateModal": {
+    "title": "Görev Oluştur",
+    "taskTitle": "Başlık",
+    "status": {
+      "title": "Durum",
+      "incomplete": "Tamamlanmadı",
+      "completed": "Tamamlandı"
+    },
+    "create": "Oluştur!"
+  },
+  "taskEditModal": {
+    "title": "Görevi Düzenle",
+    "taskTitle": "Başlık",
+    "status": {
+      "title": "Durum",
+      "incomplete": "Tamamlanmadı",
+      "completed": "Tamamlandı"
+    },
+    "save": "Kaydet!"
+  },
+  "taskDeleteModal": {
+    "title": "Görevi Sil",
+    "taskTitle": "Başlık",
+    "status": {
+      "title": "Durum",
+      "incomplete": "Tamamlanmadı",
+      "completed": "Tamamlandı"
+    },
+    "delete": "Sil!"
   }
 }

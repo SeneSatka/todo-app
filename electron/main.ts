@@ -1,19 +1,7 @@
 import { app, BrowserWindow } from "electron";
-import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// The built directory structure
-//
-// ├─┬─┬ dist
-// │ │ └── index.html
-// │ │
-// │ ├─┬ dist-electron
-// │ │ ├── main.js
-// │ │ └── preload.mjs
-// │
 process.env.APP_ROOT = path.join(__dirname, "..");
 
 // 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
@@ -29,11 +17,13 @@ let win: BrowserWindow | null;
 
 function createWindow() {
   win = new BrowserWindow({
-    icon: path.join(process.env.VITE_PUBLIC as string, "electron-vite.svg"),
+    icon: path.join(__dirname, "icon.png"),
     webPreferences: {
-      preload: path.join(__dirname, "preload.mjs"),
+      devTools: false,
       contextIsolation: true,
       experimentalFeatures: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, "preload.mjs"),
     },
   });
   win.webContents.on("did-finish-load", () => {
