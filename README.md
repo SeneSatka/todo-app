@@ -10,7 +10,6 @@
   <a href="https://github.com/SeneSatka/todo-app/releases">
   <img src="https://img.shields.io/github/downloads/SeneSatka/todo-app/total?color=red&style=for-the-badge"/>
   </a>
-
 </p>
 
 ### Run:
